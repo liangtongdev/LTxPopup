@@ -12,7 +12,7 @@ LTxPopup is available in CocoaPods, specify it in your *Podfile*:
     9.0
 
 
-##PopupMenu
+## PopupMenu
 
 ![](https://github.com/liangtongdev/LTxPopup/blob/master/screenshots/1.png)
 
