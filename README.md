@@ -12,7 +12,40 @@ LTxPopup is available in CocoaPods, specify it in your *Podfile*:
     9.0
 
 
+## PopupView
+
+**UIViewController** and **UIView** Category
+
+### Usage
+
+Set up configuration
+
+ ```Objective-C
+    LTxPopupViewConfiguration* config = [LTxPopupViewConfiguration defaultConfiguration];
+    config.containerBackgroundColor = [[UIColor brownColor] colorWithAlphaComponent:0.2];//outside color
+    config.cornerSize = 25.f;//corner size
+    config.dismissOnTapOutside = NO;//dismiss on tap outside
+    //animation setting
+    config.showAnimationType = LTxPopupViewShowAnimationFromTop;
+    config.showAnimationDuration = .6f;
+    config.hideAnimationType = LTxPopupViewHideAnimationFadeOut;
+    config.hideAnimationDuration = .4f;
+ ```
+
+Show and hide
+
+ ```Objective-C
+    //show
+    [self.view showLTxPopupView:popView configuration:config];
+
+    //hide. You may not need it if you set dismissOnTapOutside = YES
+    [self.view hideLTxPopupView];
+ ```
+
+
+
 ## PopupMenu
+**UIViewController** Category
 
 ![](https://github.com/liangtongdev/LTxPopup/blob/master/screenshots/1.png)
 
@@ -129,8 +162,11 @@ the delegate method **ltx_numberOfRows** and **ltx_configMenuCellItem:forIndex:*
 
 ## Release Log
 
++ 0.0.2 (2018/07/27) - PopupView Support
+
 + 0.0.1 (2018/07/26) - Initial Release
   + LTxPopupMenu Support
 
 ## Contacts
-liangtongdev@163.com
+
+mailto:liangtongdev@163.com
