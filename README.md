@@ -16,6 +16,8 @@ LTxPopup is available in CocoaPods, specify it in your *Podfile*:
 
 **UIViewController** and **UIView** Category
 
+![](https://github.com/liangtongdev/LTxPopup/blob/master/screenshots/2.png)
+
 ### Usage
 
 Set up configuration
@@ -169,4 +171,4 @@ the delegate method **ltx_numberOfRows** and **ltx_configMenuCellItem:forIndex:*
 
 ## Contacts
 
-mailto:liangtongdev@163.com
+ liangtongdev@163.com
