@@ -6,7 +6,7 @@
 //  Copyright © 2018年 LTx. All rights reserved.
 //
 
-#import "UIViewController+LTxPopupMenu.h"
+#import "LTxPopupMenu.h"
 
 /**************************************************************/
 /************************LTxPopupMenuController****************/

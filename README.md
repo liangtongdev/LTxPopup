@@ -2,6 +2,11 @@
 
 A collection components of popup. 
 
+ + PopupView
+ + PopupMenu
+ + PopupAlert
+
+
 ## Installation with CocoaPods
 
 LTxPopup is available in CocoaPods, specify it in your *Podfile*:
@@ -18,7 +23,6 @@ LTxPopup is available in CocoaPods, specify it in your *Podfile*:
 
 ![](https://github.com/liangtongdev/LTxPopup/blob/master/screenshots/2.png)
 
-### Usage
 
 Set up configuration
 
@@ -51,7 +55,6 @@ Show and hide
 
 ![](https://github.com/liangtongdev/LTxPopup/blob/master/screenshots/1.png)
 
-### Usage
 
 Just 3 steps. 
  + set up configuration 
@@ -160,9 +163,27 @@ the delegate method **ltx_numberOfRows** and **ltx_configMenuCellItem:forIndex:*
 -(void)ltx_selectedIndex:(NSInteger)index;
 ```
 
+## PopupAlert
+
+On the top of **UIAlertController**
+
+ ```Objective-C
+    UIAlertAction* cancelAction = ...;
+    UIAlertAction* okAction = ...;
+    UIAlertAction* desAction = ...;
+
+    [self showLTxPopupAlertWithTitle:@"提醒"
+                             message:@"这是一个AlertViewController"
+                               style:UIAlertControllerStyleAlert
+                          sourceView:nil
+                             actions:cancelAction,okAction,desAction,nil];
+ ```
+
 
 
 ## Release Log
+
++ 0.0.3 (2018/07/30) - PopupAlert Support
 
 + 0.0.2 (2018/07/27) - PopupView Support
 
@@ -172,3 +193,5 @@ the delegate method **ltx_numberOfRows** and **ltx_configMenuCellItem:forIndex:*
 ## Contacts
 
  liangtongdev@163.com
+
+[^xr1]: 

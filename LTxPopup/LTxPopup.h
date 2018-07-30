@@ -9,7 +9,13 @@
 #ifndef LTxPopup_h
 #define LTxPopup_h
 
+//PopupView
 #import "LTxPopupView.h"
-#import "UIViewController+LTxPopupMenu.h"
+
+//PopupMenu
+#import "LTxPopupMenu.h"
+
+//PopupAlert
+#import "LTxPopupAlert.h"
 
 #endif /* LTxPopup_h */

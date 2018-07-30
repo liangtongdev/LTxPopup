@@ -7,8 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "LTxPopupView.h"
-#import "UIViewController+LTxPopupMenu.h"
+#import "LTxPopup.h"
 #import "LTxMenuItemTableViewCell.h"
 
 @interface ViewController ()<LTxPopupMenuDelegate>
@@ -115,6 +114,26 @@
     config.cellNib = [UINib nibWithNibName:@"LTxMenuItemTableViewCell" bundle:nil];
     [self showLTxPopupMenuFrom:sender configuration:config delegate:self];
 }
+- (IBAction)showAlertControllerView:(UIButton *)sender {
+    
+    UIAlertControllerStyle style = rand() % 2 == 1 ? UIAlertControllerStyleActionSheet : UIAlertControllerStyleAlert;
+    
+    
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"取消"
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:nil];
+    UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        NSLog(@"%s",__func__);
+    }];
+    UIAlertAction* desAction = [UIAlertAction actionWithTitle:@"撤销"
+                                                        style:UIAlertActionStyleDestructive
+                                                      handler:nil];
+    [self showLTxPopupAlertWithTitle:@"提醒"
+                             message:@"这是一个AlertViewController"
+                               style:style
+                          sourceView:nil
+                             actions:cancelAction,okAction,desAction,nil];
+}
 
 
 
@@ -134,7 +153,7 @@
         cell.imageView.image = [UIImage imageNamed:[item objectForKey:@"avatar"]];
         cell.contentView.backgroundColor = [UIColor colorWithRed:59/255.0 green:145/255.0 blue:233/255.0 alpha:0.4];
     }else{
-         cell.imageView.image = [UIImage imageNamed:[item objectForKey:@"avatar"]];
+        cell.imageView.image = [UIImage imageNamed:[item objectForKey:@"avatar"]];
         cell.textLabel.textColor = [UIColor blueColor];
         cell.contentView.backgroundColor = [UIColor whiteColor];
     }

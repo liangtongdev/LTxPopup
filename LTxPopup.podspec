@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "LTxPopup"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "包含各类弹出框组件. "
   s.license      = "MIT"
   s.author             = { "liangtong" => "liangtongdev@163.com" }
@@ -26,10 +26,20 @@ Pod::Spec.new do |s|
     view.public_header_files = "LTxPopup/LTxPopupView/*.h"
   end
 
+  # Alert
+  s.subspec 'Alert' do |alert|
+    alert.source_files  =  "LTxPopup/LTxPopupAlert/*.{h,m}"
+    alert.public_header_files = "LTxPopup/LTxPopupAlert/*.h"
+  end
+
+
+
+
   # Core
   s.subspec 'Core' do |core|
     core.dependency 'LTxPopup/Menu'
     core.dependency 'LTxPopup/View'
+    core.dependency 'LTxPopup/Alert'
     core.source_files  =  "LTxPopup/LTxPopup.h"
     core.public_header_files = "LTxPopup/LTxPopup.h"
   end

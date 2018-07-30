@@ -39,7 +39,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EES-YX-eWs">
                                                 <rect key="frame" x="30" y="365" width="125" height="30"/>
-                                                <color key="backgroundColor" red="0.32525172829999999" green="0.56156629319999996" blue="0.88633078340000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.99880355600000004" green="0.37066739799999998" blue="0.27050551769999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="    CUSTOM NIB    ">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -86,7 +86,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUi-Ez-x5u">
                                                 <rect key="frame" x="60" y="495" width="109" height="30"/>
-                                                <color key="backgroundColor" red="0.32525172829999999" green="0.56156629319999996" blue="0.88633078340000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.99880355600000004" green="0.37066739799999998" blue="0.27050551769999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="    PopupView    ">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -94,20 +94,38 @@
                                                     <action selector="showPopupViewFromView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vyr-qG-JfJ"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zni-nn-DUT">
+                                                <rect key="frame" x="230" y="250" width="115" height="30"/>
+                                                <color key="backgroundColor" red="0.32525172829999999" green="0.56156629319999996" blue="0.88633078340000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="    ALERTVIEW    ">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="showAlertControllerView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="psh-p7-cRL"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="gRQ-D1-INP" firstAttribute="leading" secondItem="DMS-o4-XrW" secondAttribute="leading" constant="60" id="12r-Rf-nne"/>
                                             <constraint firstItem="gUi-Ez-x5u" firstAttribute="leading" secondItem="DMS-o4-XrW" secondAttribute="leading" constant="60" id="1ss-hx-k5h"/>
+                                            <constraint firstItem="L5E-jf-xUy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DMS-o4-XrW" secondAttribute="leading" constant="20" symbolic="YES" id="3Wx-uH-gIE"/>
+                                            <constraint firstItem="zni-nn-DUT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DMS-o4-XrW" secondAttribute="leading" constant="20" symbolic="YES" id="3d1-qp-cDL"/>
                                             <constraint firstAttribute="bottom" secondItem="L5E-jf-xUy" secondAttribute="bottom" constant="300" id="6BB-kb-f2N"/>
                                             <constraint firstItem="gRQ-D1-INP" firstAttribute="top" secondItem="DMS-o4-XrW" secondAttribute="top" constant="180" id="7sf-AJ-E83"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gUi-Ez-x5u" secondAttribute="trailing" constant="20" symbolic="YES" id="BV3-mp-9yX"/>
+                                            <constraint firstItem="t8u-Yu-tMv" firstAttribute="trailing" secondItem="zni-nn-DUT" secondAttribute="trailing" id="Dz1-BD-wUH"/>
                                             <constraint firstItem="t8u-Yu-tMv" firstAttribute="centerY" secondItem="DMS-o4-XrW" secondAttribute="centerY" constant="-100" id="Lae-mC-5dH"/>
+                                            <constraint firstItem="t8u-Yu-tMv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DMS-o4-XrW" secondAttribute="leading" constant="20" symbolic="YES" id="PU0-uU-WCK"/>
                                             <constraint firstItem="L5E-jf-xUy" firstAttribute="trailing" secondItem="t8u-Yu-tMv" secondAttribute="trailing" id="Qqs-N0-kaT"/>
                                             <constraint firstItem="t8u-Yu-tMv" firstAttribute="centerY" secondItem="EES-YX-eWs" secondAttribute="centerY" constant="-30" id="aaR-KH-kbL"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gRQ-D1-INP" secondAttribute="trailing" constant="20" symbolic="YES" id="dHq-aT-sFx"/>
                                             <constraint firstItem="EES-YX-eWs" firstAttribute="leading" secondItem="DMS-o4-XrW" secondAttribute="leading" constant="30" id="eKS-bn-TJT"/>
                                             <constraint firstAttribute="height" constant="900" id="fhp-As-xvQ"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EES-YX-eWs" secondAttribute="trailing" constant="20" symbolic="YES" id="jM7-0N-BEJ"/>
                                             <constraint firstItem="gUi-Ez-x5u" firstAttribute="top" secondItem="EES-YX-eWs" secondAttribute="bottom" constant="100" id="qO3-bu-IQv"/>
                                             <constraint firstAttribute="trailing" secondItem="t8u-Yu-tMv" secondAttribute="trailing" constant="30" id="vIi-lv-Kzu"/>
+                                            <constraint firstItem="t8u-Yu-tMv" firstAttribute="top" secondItem="zni-nn-DUT" secondAttribute="bottom" constant="50" id="x3V-n5-CD2"/>
                                         </constraints>
                                     </view>
                                 </subviews>
