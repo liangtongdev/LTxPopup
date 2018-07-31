@@ -20,6 +20,9 @@
 		2784C422210AFEF800C3CA6C /* LTxPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2784C41E210AFEF800C3CA6C /* LTxPopupView.m */; };
 		27B31BB6210EBE7B00174FC2 /* LTxPopupAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B31BB5210EBE7B00174FC2 /* LTxPopupAlert.m */; };
 		27B31BB9210ECA2700174FC2 /* UIAlertController+LTxPopupAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B31BB8210ECA2700174FC2 /* UIAlertController+LTxPopupAlert.m */; };
+		27B31BBE210F060E00174FC2 /* LTxPopupToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B31BBD210F060E00174FC2 /* LTxPopupToast.m */; };
+		27B31BC1210F120000174FC2 /* LTxPopupToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B31BC0210F120000174FC2 /* LTxPopupToastView.m */; };
+		27B31BC62110041700174FC2 /* LTxPopupHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B31BC52110041700174FC2 /* LTxPopupHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,12 @@
 		27B31BB5210EBE7B00174FC2 /* LTxPopupAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTxPopupAlert.m; sourceTree = "<group>"; };
 		27B31BB7210ECA2700174FC2 /* UIAlertController+LTxPopupAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+LTxPopupAlert.h"; sourceTree = "<group>"; };
 		27B31BB8210ECA2700174FC2 /* UIAlertController+LTxPopupAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+LTxPopupAlert.m"; sourceTree = "<group>"; };
+		27B31BBC210F060E00174FC2 /* LTxPopupToast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTxPopupToast.h; sourceTree = "<group>"; };
+		27B31BBD210F060E00174FC2 /* LTxPopupToast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTxPopupToast.m; sourceTree = "<group>"; };
+		27B31BBF210F120000174FC2 /* LTxPopupToastView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTxPopupToastView.h; sourceTree = "<group>"; };
+		27B31BC0210F120000174FC2 /* LTxPopupToastView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTxPopupToastView.m; sourceTree = "<group>"; };
+		27B31BC42110041700174FC2 /* LTxPopupHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTxPopupHelper.h; sourceTree = "<group>"; };
+		27B31BC52110041700174FC2 /* LTxPopupHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTxPopupHelper.m; sourceTree = "<group>"; };
 		27E9327C210B05D100CCC331 /* LTxPopup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTxPopup.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,6 +106,7 @@
 		2784C3E52109CEE200C3CA6C /* LTxPopup */ = {
 			isa = PBXGroup;
 			children = (
+				27B31BC3211003FF00174FC2 /* LTxPopupCommon */,
 				27B31BBA210EFB2300174FC2 /* LTxPopupToast */,
 				27B31BB3210EBE1200174FC2 /* LTxPopupAlert */,
 				2784C3F0210A9F0E00C3CA6C /* LTxPopupView */,
@@ -150,8 +160,21 @@
 		27B31BBA210EFB2300174FC2 /* LTxPopupToast */ = {
 			isa = PBXGroup;
 			children = (
+				27B31BBF210F120000174FC2 /* LTxPopupToastView.h */,
+				27B31BC0210F120000174FC2 /* LTxPopupToastView.m */,
+				27B31BBC210F060E00174FC2 /* LTxPopupToast.h */,
+				27B31BBD210F060E00174FC2 /* LTxPopupToast.m */,
 			);
 			path = LTxPopupToast;
+			sourceTree = "<group>";
+		};
+		27B31BC3211003FF00174FC2 /* LTxPopupCommon */ = {
+			isa = PBXGroup;
+			children = (
+				27B31BC42110041700174FC2 /* LTxPopupHelper.h */,
+				27B31BC52110041700174FC2 /* LTxPopupHelper.m */,
+			);
+			path = LTxPopupCommon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,10 +249,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2784C3E92109CEE200C3CA6C /* LTxPopupMenu.m in Sources */,
+				27B31BC1210F120000174FC2 /* LTxPopupToastView.m in Sources */,
 				2784C422210AFEF800C3CA6C /* LTxPopupView.m in Sources */,
+				27B31BC62110041700174FC2 /* LTxPopupHelper.m in Sources */,
 				2784C421210AFEF800C3CA6C /* LTxPopupViewConfiguration.m in Sources */,
 				27B31BB9210ECA2700174FC2 /* UIAlertController+LTxPopupAlert.m in Sources */,
 				2784C3CF2109CE4F00C3CA6C /* ViewController.m in Sources */,
+				27B31BBE210F060E00174FC2 /* LTxPopupToast.m in Sources */,
 				2784C3EE2109CF0300C3CA6C /* LTxMenuItemTableViewCell.m in Sources */,
 				2784C3DA2109CE5000C3CA6C /* main.m in Sources */,
 				27B31BB6210EBE7B00174FC2 /* LTxPopupAlert.m in Sources */,

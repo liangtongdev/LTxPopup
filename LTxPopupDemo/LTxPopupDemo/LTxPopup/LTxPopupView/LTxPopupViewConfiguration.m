@@ -19,8 +19,8 @@
     
     config.cornerSize = 10.f;
     
-    config.showAnimationType = LTxPopupViewShowAnimationAppear;
-    config.hideAnimationType = LTxPopupViewHideAnimationDisappear;
+    config.showAnimationType = LTxPopupShowAnimationAppear;
+    config.hideAnimationType = LTxPopupHideAnimationDisappear;
     config.showAnimationDuration = 0.4f;
     config.hideAnimationDuration = 0.f;
     return config;

@@ -11,7 +11,7 @@
 
 @interface LTxPopupViewContainerView : UIView
 
-@property (nonatomic, copy) LTxPopupViewCallback dismissCallback;
+@property (nonatomic, copy) LTxPopupCallback dismissCallback;
 +(instancetype)instanceWithFrame:(CGRect)frame configuration:(LTxPopupViewConfiguration*)config;
 -(void)ltx_hidePopupViewContainerView;
 @end
@@ -62,13 +62,18 @@
     LTxPopupViewContainerView* containerView = [LTxPopupViewContainerView instanceWithFrame:self.bounds configuration:configuration];
     
     containerView.dismissCallback = ^{
-        [self ltx_hidePopupView:popView configuration:configuration];
+        [self ltx_hidePopup:popView animateType:configuration.hideAnimationType duration:configuration.hideAnimationDuration complete:^{
+            
+        }];
     };
     [self addSubview:containerView];
     
     [self ltx_configPopupView:popView configuration:configuration];
     
-    [self ltx_showPopupView:popView configuration:configuration];
+    [self addSubview:popView];
+    [self ltx_showPopup:popView animateType:configuration.showAnimationType duration:configuration.showAnimationDuration complete:^{
+        
+    }];
     
 }
 
@@ -90,67 +95,6 @@
         UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:popView.bounds byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(config.cornerSize, config.cornerSize)];
         shapeLayer.path = path.CGPath;
         popView.layer.mask = shapeLayer;
-    }
-}
-
--(void)ltx_showPopupView:(UIView*)popView configuration:(LTxPopupViewConfiguration*)config{
-    if (config.showAnimationType == LTxPopupViewShowAnimationAppear) {
-        [self addSubview:popView];
-    }else if (config.showAnimationType == LTxPopupViewShowAnimationFadeIn){
-        [self addSubview:popView];
-        popView.alpha = 0.f;
-        [UIView animateWithDuration:config.showAnimationDuration delay:0.1 usingSpringWithDamping:0.8 initialSpringVelocity:0.5 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-            popView.alpha = 1.f;
-        } completion:^(BOOL finished) {
-        }];
-    }else if (config.showAnimationType == LTxPopupViewShowAnimationFromTop || config.showAnimationType == LTxPopupViewShowAnimationFromRight || config.showAnimationType == LTxPopupViewShowAnimationFromBottom || config.showAnimationType == LTxPopupViewShowAnimationFromLeft ){
-        CGRect toRect = popView.frame;
-        CGRect fromRect = CGRectZero;
-        if (config.showAnimationType == LTxPopupViewShowAnimationFromTop) {
-            fromRect = CGRectOffset(toRect, 0, -(toRect.size.height + toRect.origin.y));
-        }else if (config.showAnimationType == LTxPopupViewShowAnimationFromRight) {
-            fromRect = CGRectOffset(toRect, (self.frame.size.width + toRect.size.width), 0);
-        }else if (config.showAnimationType == LTxPopupViewShowAnimationFromBottom) {
-            fromRect = CGRectOffset(toRect, 0, (self.frame.size.height + toRect.size.height));
-        }else if (config.showAnimationType == LTxPopupViewShowAnimationFromLeft) {
-            fromRect = CGRectOffset(toRect, -(toRect.size.width + toRect.origin.x), 0);
-        }
-        
-        [self addSubview:popView];
-        popView.frame = fromRect;
-        [UIView animateWithDuration:config.showAnimationDuration delay:0.2 usingSpringWithDamping:0.7 initialSpringVelocity:0.5 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-            popView.frame = toRect;
-        } completion:^(BOOL finished) {
-        }];
-        
-    }
-}
-
--(void)ltx_hidePopupView:(UIView*)popView configuration:(LTxPopupViewConfiguration*)config{
-    if (config.hideAnimationType == LTxPopupViewHideAnimationDisappear) {
-        [popView removeFromSuperview];
-    }else if (config.hideAnimationType == LTxPopupViewHideAnimationFadeOut){
-        [UIView animateWithDuration:config.hideAnimationDuration delay:0.1 usingSpringWithDamping:0.8 initialSpringVelocity:0.5 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-            popView.alpha = 0.f;
-        } completion:^(BOOL finished) {
-            [popView removeFromSuperview];
-        }];
-    }else if (config.hideAnimationType == LTxPopupViewHideAnimationOutToTop || config.hideAnimationType == LTxPopupViewHideAnimationOutToRight || config.hideAnimationType == LTxPopupViewHideAnimationOutToBottom || config.hideAnimationType == LTxPopupViewHideAnimationOutToLeft ){
-        CGRect toRect = popView.frame;
-        if (config.hideAnimationType == LTxPopupViewHideAnimationOutToTop) {
-            toRect = CGRectOffset(toRect, 0, -(toRect.size.height + toRect.origin.y));
-        }else if (config.hideAnimationType == LTxPopupViewHideAnimationOutToRight) {
-            toRect = CGRectOffset(toRect, (self.frame.size.width + toRect.size.width), 0);
-        }else if (config.hideAnimationType == LTxPopupViewHideAnimationOutToBottom) {
-            toRect = CGRectOffset(toRect, 0, (self.frame.size.height + toRect.size.height));
-        }else if (config.hideAnimationType == LTxPopupViewHideAnimationOutToLeft) {
-            toRect = CGRectOffset(toRect, -(toRect.size.width + toRect.origin.x), 0);
-        }
-        [UIView animateWithDuration:config.hideAnimationDuration delay:0.2 usingSpringWithDamping:0.7 initialSpringVelocity:0.5 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-            popView.frame = toRect;
-        } completion:^(BOOL finished) {
-            [popView removeFromSuperview];
-        }];
     }
 }
 @end

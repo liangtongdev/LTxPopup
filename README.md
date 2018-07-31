@@ -2,9 +2,10 @@
 
 A collection components of popup. 
 
- + PopupView
- + PopupMenu
- + PopupAlert
+ + View
+ + Menu
+ + Alert
+ + Toast
 
 
 ## Installation with CocoaPods
@@ -21,7 +22,7 @@ LTxPopup is available in CocoaPods, specify it in your *Podfile*:
 
 **UIViewController** and **UIView** Category
 
-![](https://github.com/liangtongdev/LTxPopup/blob/master/screenshots/2.png)
+![](https://github.com/liangtongdev/LTxPopup/blob/master/screenshots/popup_view.png)
 
 
 Set up configuration
@@ -53,7 +54,7 @@ Show and hide
 ## PopupMenu
 **UIViewController** Category
 
-![](https://github.com/liangtongdev/LTxPopup/blob/master/screenshots/1.png)
+![](https://github.com/liangtongdev/LTxPopup/blob/master/screenshots/popup_menu.png)
 
 
 Just 3 steps. 
@@ -165,6 +166,8 @@ the delegate method **ltx_numberOfRows** and **ltx_configMenuCellItem:forIndex:*
 
 ## PopupAlert
 
+![](https://github.com/liangtongdev/LTxPopup/blob/master/screenshots/popup_alert.png)
+
 On the top of **UIAlertController**
 
  ```Objective-C
@@ -179,19 +182,99 @@ On the top of **UIAlertController**
                              actions:cancelAction,okAction,desAction,nil];
  ```
 
+## PopupToast
+
+![](https://github.com/liangtongdev/LTxPopup/blob/master/screenshots/popup_toast.png)
+
+Quick example of LTxPopupToast
+
+ ```Objective-C
+    LTxPopupToastConfiguration* configuration = [LTxPopupToastConfiguration defaultConfiguration];
+    configuration.image = [UIImage imageNamed:@"teal_checkmark"];
+    configuration.title = @"Notification";
+    configuration.message = @"This liangtong from zhengzhou. thanks very much.   😄 ";
+    
+    [LTxPopupToast showLTxPopupToastWithConfiguration:configuration show:^{
+        NSLog(@"popup toast show complete");
+    } tap:^{
+        NSLog(@"tap at popup toast ");
+    } dismiss:^{
+        NSLog(@"popup toast dismissed");
+    }];
+ ```
+
+Setup the toast
+
+ ```Objective-C
+@interface LTxPopupToastConfiguration : NSObject
+
+/**
+ * show under status bar
+ **/
+@property (nonatomic, assign) BOOL showUnderStatusBar;
+
+/**
+ * background color
+ **/
+@property (nonatomic, strong) UIColor* backgroundColor;
+
+/**
+ * image on the left of toast. nil means no image
+ **/
+@property (nonatomic, strong) UIImage* image;
+
+/**
+ * ignore btn. title color and font
+ **/
+@property (nonatomic, assign) BOOL showIgnoreBtn;
+@property (nonatomic, strong) NSString* ignoreBtnTitle;
+@property (nonatomic, strong) UIColor* ignroeBtnTitleColor;
+@property (nonatomic, assign) CGFloat ignoreBtnTitleFontSize;
+
+/**
+ * title
+ **/
+@property (nonatomic, strong) NSString* title;
+@property (nonatomic, assign) NSTextAlignment titleTextAlignment;
+@property (nonatomic, strong) UIColor* titleColor;
+@property (nonatomic, assign) CGFloat titleFontSize;
+
+/**
+ * message
+ **/
+@property (nonatomic, strong) NSString* message;
+@property (nonatomic, assign) NSTextAlignment messageTextAlignment;
+@property (nonatomic, strong) UIColor* messageColor;
+@property (nonatomic, assign) CGFloat messageFontSize;
+
+/**
+ * animating
+ **/
+@property (nonatomic, assign) CGFloat showAnimateDuration;
+@property (nonatomic, assign) CGFloat showDuration;
+@property (nonatomic, assign) BOOL autoDismiss;
+
+/**
+ * @brief: init method. also you can use alloc and init method.
+ **/
++(instancetype)defaultConfiguration;
+@end
+ ```
+
 
 
 ## Release Log
 
-+ 0.0.3 (2018/07/30) - PopupAlert Support
++ 0.0.4 (2018/07/31) - Popup Toast Support
 
-+ 0.0.2 (2018/07/27) - PopupView Support
++ 0.0.3 (2018/07/30) - Popup Alert Support
 
-+ 0.0.1 (2018/07/26) - Initial Release
-  + LTxPopupMenu Support
++ 0.0.2 (2018/07/27) - Popup View Support
+
++ 0.0.1 (2018/07/26) - Popup Menu Support
 
 ## Contacts
 
  liangtongdev@163.com
- 
+
  

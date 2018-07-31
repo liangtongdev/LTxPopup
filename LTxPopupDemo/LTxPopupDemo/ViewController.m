@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+//    self.view.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.5];
     _dataSource = @[
                     @{
                         @"avatar":@"avatar1",
@@ -49,9 +50,9 @@
     config.containerBackgroundColor = [[UIColor brownColor] colorWithAlphaComponent:0.2];
     config.cornerSize = 25.f;
     config.dismissOnTapOutside = NO;
-    config.showAnimationType = LTxPopupViewShowAnimationFromTop;
+    config.showAnimationType = LTxPopupShowAnimationFromTop;
     config.showAnimationDuration = .6f;
-    config.hideAnimationType = LTxPopupViewHideAnimationFadeOut;
+    config.hideAnimationType = LTxPopupHideAnimationFadeOut;
     config.hideAnimationDuration = .4f;
     
     
@@ -73,7 +74,7 @@
     config.containerBackgroundColor = [[UIColor orangeColor] colorWithAlphaComponent:0.1];
     config.cornerSize = 25.f;
     config.dismissOnTapOutside = YES;
-    config.showAnimationType = LTxPopupViewShowAnimationFromBottom;
+    config.showAnimationType = LTxPopupShowAnimationFromBottom;
     config.showAnimationDuration = .6f;
     
     
@@ -133,6 +134,23 @@
                                style:style
                           sourceView:nil
                              actions:cancelAction,okAction,desAction,nil];
+}
+- (IBAction)showToast:(UIButton *)sender {
+    
+    LTxPopupToastConfiguration* configuration = [LTxPopupToastConfiguration defaultConfiguration];
+//    configuration.image = [UIImage imageNamed:@"teal_checkmark"];
+//    configuration.title = @"Notification";
+    configuration.message = @"This liangtong from zhengzhou. thanks very much.   😄 ";
+    configuration.messageColor = [UIColor yellowColor];
+    configuration.messageFontSize = 15.f;
+    
+    [LTxPopupToast showLTxPopupToastWithConfiguration:configuration show:^{
+        NSLog(@"popup toast show complete");
+    } tap:^{
+        NSLog(@"tap at popup toast ");
+    } dismiss:^{
+        NSLog(@"popup toast dismissed");
+    }];
 }
 
 

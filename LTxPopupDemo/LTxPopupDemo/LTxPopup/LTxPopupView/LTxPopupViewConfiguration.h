@@ -8,26 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
-typedef void (^LTxPopupViewCallback)(void);
-
-typedef NS_ENUM(NSInteger, LTxPopupViewShowAnimation){
-    LTxPopupViewShowAnimationAppear,
-    LTxPopupViewShowAnimationFadeIn,
-    LTxPopupViewShowAnimationFromTop,
-    LTxPopupViewShowAnimationFromRight,
-    LTxPopupViewShowAnimationFromBottom,
-    LTxPopupViewShowAnimationFromLeft
-};
-
-typedef NS_ENUM(NSInteger, LTxPopupViewHideAnimation){
-    LTxPopupViewHideAnimationDisappear,
-    LTxPopupViewHideAnimationFadeOut,
-    LTxPopupViewHideAnimationOutToTop,
-    LTxPopupViewHideAnimationOutToRight,
-    LTxPopupViewHideAnimationOutToBottom,
-    LTxPopupViewHideAnimationOutToLeft
-};
+#import "LTxPopupHelper.h"
 
 
 /**
@@ -44,8 +25,8 @@ typedef NS_ENUM(NSInteger, LTxPopupViewHideAnimation){
 @property (nonatomic, assign) CGFloat cornerSize;
 
 //animation type and duration
-@property (nonatomic, assign) LTxPopupViewShowAnimation showAnimationType;
-@property (nonatomic, assign) LTxPopupViewHideAnimation hideAnimationType;
+@property (nonatomic, assign) LTxPopupShowAnimation showAnimationType;
+@property (nonatomic, assign) LTxPopupHideAnimation hideAnimationType;
 @property (nonatomic, assign) CGFloat showAnimationDuration;
 @property (nonatomic, assign) CGFloat hideAnimationDuration;
 

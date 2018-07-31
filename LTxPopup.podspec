@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "LTxPopup"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "包含各类弹出框组件. "
   s.license      = "MIT"
   s.author             = { "liangtong" => "liangtongdev@163.com" }
@@ -14,6 +14,12 @@ Pod::Spec.new do |s|
 
   s.default_subspecs = 'Core'
 
+  # Common
+  s.subspec 'Common' do |common|
+    common.source_files  =  "LTxPopup/LTxPopupCommon/*.{h,m}"
+    common.public_header_files = "LTxPopup/LTxPopupCommon/*.h"
+  end
+
   # Menu
   s.subspec 'Menu' do |menu|
     menu.source_files  =  "LTxPopup/LTxPopupMenu/*.{h,m}"
@@ -24,6 +30,7 @@ Pod::Spec.new do |s|
   s.subspec 'View' do |view|
     view.source_files  =  "LTxPopup/LTxPopupView/*.{h,m}"
     view.public_header_files = "LTxPopup/LTxPopupView/*.h"
+    view.dependency 'LTxPopup/Common'
   end
 
   # Alert
@@ -32,7 +39,12 @@ Pod::Spec.new do |s|
     alert.public_header_files = "LTxPopup/LTxPopupAlert/*.h"
   end
 
-
+  # Toast
+  s.subspec 'Toast' do |toast|
+    toast.source_files  =  "LTxPopup/LTxPopupToast/*.{h,m}"
+    toast.public_header_files = "LTxPopup/LTxPopupToast/*.h"
+    toast.dependency 'LTxPopup/Common'
+  end
 
 
   # Core
@@ -40,6 +52,7 @@ Pod::Spec.new do |s|
     core.dependency 'LTxPopup/Menu'
     core.dependency 'LTxPopup/View'
     core.dependency 'LTxPopup/Alert'
+    core.dependency 'LTxPopup/Toast'
     core.source_files  =  "LTxPopup/LTxPopup.h"
     core.public_header_files = "LTxPopup/LTxPopup.h"
   end

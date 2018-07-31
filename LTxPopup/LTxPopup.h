@@ -18,4 +18,7 @@
 //PopupAlert
 #import "LTxPopupAlert.h"
 
+//PopupToast
+#import "LTxPopupToast.h"
+
 #endif /* LTxPopup_h */
