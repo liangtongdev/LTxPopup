@@ -193,5 +193,5 @@ On the top of **UIAlertController**
 ## Contacts
 
  liangtongdev@163.com
-
-[^xr1]: 
+ 
+ 
