@@ -2,10 +2,10 @@
 
 A collection components of popup. 
 
- + View
  + Menu
- + Alert
  + Toast
+ + View
+ + Alert
 
 
 ## Installation with CocoaPods
@@ -16,40 +16,6 @@ LTxPopup is available in CocoaPods, specify it in your *Podfile*:
 
 ## Deployment
     9.0
-
-
-## PopupView
-
-**UIViewController** and **UIView** Category
-
-![](https://github.com/liangtongdev/LTxPopup/blob/master/screenshots/popup_view.png)
-
-
-Set up configuration
-
- ```Objective-C
-    LTxPopupViewConfiguration* config = [LTxPopupViewConfiguration defaultConfiguration];
-    config.containerBackgroundColor = [[UIColor brownColor] colorWithAlphaComponent:0.2];//outside color
-    config.cornerSize = 25.f;//corner size
-    config.dismissOnTapOutside = NO;//dismiss on tap outside
-    //animation setting
-    config.showAnimationType = LTxPopupViewShowAnimationFromTop;
-    config.showAnimationDuration = .6f;
-    config.hideAnimationType = LTxPopupViewHideAnimationFadeOut;
-    config.hideAnimationDuration = .4f;
- ```
-
-Show and hide
-
- ```Objective-C
-    //show
-    [self.view showLTxPopupView:popView configuration:config];
-
-    //hide. You may not need it if you set dismissOnTapOutside = YES
-    [self.view hideLTxPopupView];
- ```
-
-
 
 ## PopupMenu
 **UIViewController** Category
@@ -164,24 +130,6 @@ the delegate method **ltx_numberOfRows** and **ltx_configMenuCellItem:forIndex:*
 -(void)ltx_selectedIndex:(NSInteger)index;
 ```
 
-## PopupAlert
-
-![](https://github.com/liangtongdev/LTxPopup/blob/master/screenshots/popup_alert.png)
-
-On the top of **UIAlertController**
-
- ```Objective-C
-    UIAlertAction* cancelAction = ...;
-    UIAlertAction* okAction = ...;
-    UIAlertAction* desAction = ...;
-
-    [self showLTxPopupAlertWithTitle:@"提醒"
-                             message:@"这是一个AlertViewController"
-                               style:UIAlertControllerStyleAlert
-                          sourceView:nil
-                             actions:cancelAction,okAction,desAction,nil];
- ```
-
 ## PopupToast
 
 ![](https://github.com/liangtongdev/LTxPopup/blob/master/screenshots/popup_toast.png)
@@ -261,6 +209,58 @@ Setup the toast
 @end
  ```
 
+## PopupView
+
+**UIViewController** and **UIView** Category
+
+![](https://github.com/liangtongdev/LTxPopup/blob/master/screenshots/popup_view.png)
+
+
+Set up configuration
+
+ ```Objective-C
+    LTxPopupViewConfiguration* config = [LTxPopupViewConfiguration defaultConfiguration];
+    config.containerBackgroundColor = [[UIColor brownColor] colorWithAlphaComponent:0.2];//outside color
+    config.cornerSize = 25.f;//corner size
+    config.dismissOnTapOutside = NO;//dismiss on tap outside
+    //animation setting
+    config.showAnimationType = LTxPopupViewShowAnimationFromTop;
+    config.showAnimationDuration = .6f;
+    config.hideAnimationType = LTxPopupViewHideAnimationFadeOut;
+    config.hideAnimationDuration = .4f;
+ ```
+
+Show and hide
+
+ ```Objective-C
+    //show
+    [self.view showLTxPopupView:popView configuration:config];
+
+    //hide. You may not need it if you set dismissOnTapOutside = YES
+    [self.view hideLTxPopupView];
+ ```
+
+
+## PopupAlert
+
+![](https://github.com/liangtongdev/LTxPopup/blob/master/screenshots/popup_alert.png)
+
+On the top of **UIAlertController**
+
+ ```Objective-C
+    UIAlertAction* cancelAction = ...;
+    UIAlertAction* okAction = ...;
+    UIAlertAction* desAction = ...;
+
+    [self showLTxPopupAlertWithTitle:@"提醒"
+                             message:@"这是一个AlertViewController"
+                               style:UIAlertControllerStyleAlert
+                          sourceView:nil
+                             actions:cancelAction,okAction,desAction,nil];
+ ```
+
+
+
 
 
 ## Release Log
@@ -277,4 +277,7 @@ Setup the toast
 
  liangtongdev@163.com
 
+## License
+
+ MIT
  
