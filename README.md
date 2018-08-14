@@ -224,9 +224,9 @@ Set up configuration
     config.cornerSize = 25.f;//corner size
     config.dismissOnTapOutside = NO;//dismiss on tap outside
     //animation setting
-    config.showAnimationType = LTxPopupViewShowAnimationFromTop;
+    config.showAnimationType = LTxPopupShowAnimationAppear;
     config.showAnimationDuration = .6f;
-    config.hideAnimationType = LTxPopupViewHideAnimationFadeOut;
+    config.hideAnimationType = LTxPopupHideAnimationFadeOut;
     config.hideAnimationDuration = .4f;
  ```
 
