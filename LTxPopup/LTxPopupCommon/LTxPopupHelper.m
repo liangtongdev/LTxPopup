@@ -39,7 +39,7 @@
         }
         
         popup.frame = fromRect;
-        [UIView animateWithDuration:duration delay:0.2 usingSpringWithDamping:0.7 initialSpringVelocity:0.5 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+        [UIView animateWithDuration:duration delay:0.2 usingSpringWithDamping:0.9 initialSpringVelocity:0.1 options:UIViewAnimationOptionAllowUserInteraction animations:^{
             popup.frame = toRect;
         } completion:^(BOOL finished) {
             if (complete) {
@@ -77,7 +77,7 @@
         }else if (animateType == LTxPopupHideAnimationOutToLeft) {
             toRect = CGRectOffset(toRect, -(toRect.size.width + toRect.origin.x), 0);
         }
-        [UIView animateWithDuration:duration delay:0.2 usingSpringWithDamping:0.7 initialSpringVelocity:0.5 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+        [UIView animateWithDuration:duration delay:0.2 usingSpringWithDamping:0.9 initialSpringVelocity:0.1 options:UIViewAnimationOptionAllowUserInteraction animations:^{
             popup.frame = toRect;
         } completion:^(BOOL finished) {
             [popup removeFromSuperview];
