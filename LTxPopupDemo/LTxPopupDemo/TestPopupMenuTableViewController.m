@@ -49,7 +49,7 @@
     
     LTxPopupMenuConfiguration* config = [LTxPopupMenuConfiguration defaultConfiguration];
     config.arrowDirection = UIPopoverArrowDirectionUp | UIPopoverArrowDirectionDown;
-    config.menuContentSize = CGSizeMake(160, 300);
+    config.menuContentSize = CGSizeMake(200, 300);
     [self showLTxPopupMenuFrom:sender configuration:config delegate:self];
 }
 
