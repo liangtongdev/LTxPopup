@@ -1,0 +1,29 @@
+PODS:
+  - LTxPopup (0.0.4):
+    - LTxPopup/Core (= 0.0.4)
+  - LTxPopup/Alert (0.0.4)
+  - LTxPopup/Common (0.0.4)
+  - LTxPopup/Core (0.0.4):
+    - LTxPopup/Alert
+    - LTxPopup/Menu
+    - LTxPopup/Toast
+    - LTxPopup/View
+  - LTxPopup/Menu (0.0.4)
+  - LTxPopup/Toast (0.0.4):
+    - LTxPopup/Common
+  - LTxPopup/View (0.0.4):
+    - LTxPopup/Common
+
+DEPENDENCIES:
+  - LTxPopup (from `../`)
+
+EXTERNAL SOURCES:
+  LTxPopup:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LTxPopup: 1ef86900abcc61c910396bd7163b3d1f31371972
+
+PODFILE CHECKSUM: 22c0686d448818d94514d477e48b258f6edf749b
+
+COCOAPODS: 1.5.2

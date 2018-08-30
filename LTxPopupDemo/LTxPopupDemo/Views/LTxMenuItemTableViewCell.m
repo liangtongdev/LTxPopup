@@ -25,10 +25,9 @@
     self.bgView.layer.shadowOffset = CGSizeMake(3, 3);
     self.bgView.layer.shadowRadius = 3.0;
     
-    self.iconIV.layer.borderColor = [UIColor brownColor].CGColor;
-    self.iconIV.layer.cornerRadius = 15.f;
-    self.iconIV.layer.borderWidth = 1.f;
     self.iconIV.layer.masksToBounds = YES;
+    self.iconIV.contentMode = UIViewContentModeScaleAspectFill;
+                               
     
 }
 

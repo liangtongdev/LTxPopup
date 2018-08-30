@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^LTxCallbackBlock)(void);
+
 @interface LTxMenuItemTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) NSDictionary* item;
+@property (nonatomic, copy) LTxCallbackBlock actionCallback;
 
+@property (weak, nonatomic) IBOutlet UIImageView *moreIV;
 @end
