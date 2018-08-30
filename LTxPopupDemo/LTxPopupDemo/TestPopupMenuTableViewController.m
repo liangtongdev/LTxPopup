@@ -39,7 +39,7 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"LTxMenuItemTableViewCell" bundle:nil] forCellReuseIdentifier:LTxMenuItemTableViewCellIdentifier];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.rowHeight = 140.f;
+    self.tableView.rowHeight = 130.f;
 }
 
 #pragma mark - Action
