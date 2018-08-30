@@ -26,7 +26,7 @@ LTxPopup is available in CocoaPods, specify it in your *Podfile*:
 Just 3 steps. 
  + set up configuration 
  + protocol method
- +  show
+ + show
 
  For example. If you show custom Nib menu item with LTxPopupMenu
  ```Objective-C
@@ -130,6 +130,39 @@ the delegate method **ltx_numberOfRows** and **ltx_configMenuCellItem:forIndex:*
 -(void)ltx_selectedIndex:(NSInteger)index;
 ```
 
+## PopupView
+
+**UIViewController** and **UIView** Category
+
+![](https://github.com/liangtongdev/LTxPopup/blob/master/screenshots/popup_view.png)
+
+
+Set up configuration
+
+ ```Objective-C
+    LTxPopupViewConfiguration* config = [LTxPopupViewConfiguration defaultConfiguration];
+    config.containerBackgroundColor = [[UIColor brownColor] colorWithAlphaComponent:0.2];//outside color
+    config.cornerSize = 25.f;//corner size
+    config.dismissOnTapOutside = NO;//dismiss on tap outside
+    //animation setting
+    config.showAnimationType = LTxPopupShowAnimationAppear;
+    config.showAnimationDuration = .6f;
+    config.hideAnimationType = LTxPopupHideAnimationFadeOut;
+    config.hideAnimationDuration = .4f;
+ ```
+
+Show and hide
+
+ ```Objective-C
+    //show
+    [self.view showLTxPopupView:popView configuration:config];
+
+    //hide. You may not need it if you set dismissOnTapOutside = YES
+    [self.view hideLTxPopupView];
+ ```
+
+
+
 ## PopupToast
 
 ![](https://github.com/liangtongdev/LTxPopup/blob/master/screenshots/popup_toast.png)
@@ -209,37 +242,6 @@ Setup the toast
 @end
  ```
 
-## PopupView
-
-**UIViewController** and **UIView** Category
-
-![](https://github.com/liangtongdev/LTxPopup/blob/master/screenshots/popup_view.png)
-
-
-Set up configuration
-
- ```Objective-C
-    LTxPopupViewConfiguration* config = [LTxPopupViewConfiguration defaultConfiguration];
-    config.containerBackgroundColor = [[UIColor brownColor] colorWithAlphaComponent:0.2];//outside color
-    config.cornerSize = 25.f;//corner size
-    config.dismissOnTapOutside = NO;//dismiss on tap outside
-    //animation setting
-    config.showAnimationType = LTxPopupShowAnimationAppear;
-    config.showAnimationDuration = .6f;
-    config.hideAnimationType = LTxPopupHideAnimationFadeOut;
-    config.hideAnimationDuration = .4f;
- ```
-
-Show and hide
-
- ```Objective-C
-    //show
-    [self.view showLTxPopupView:popView configuration:config];
-
-    //hide. You may not need it if you set dismissOnTapOutside = YES
-    [self.view hideLTxPopupView];
- ```
-
 
 ## PopupAlert
 
@@ -279,5 +281,25 @@ On the top of **UIAlertController**
 
 ## License
 
- MIT
- 
+MIT License
+
+Copyright (c) 2018 liangtong
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
