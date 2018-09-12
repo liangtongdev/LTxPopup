@@ -8,7 +8,7 @@
 
 #import "TestPopupMenuTableViewController.h"
 #import "LTxMenuItemTableViewCell.h"
-#import "LTxPopup.h"
+#import <LTxPopup/LTxPopup.h>
 
 #define  LTxMenuItemTableViewCellIdentifier @"LTxMenuItemTableViewCellIdentifier"
 @interface TestPopupMenuTableViewController ()<LTxPopupMenuDelegate>

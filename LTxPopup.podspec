@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "LTxPopup"
-  s.version      = "0.0.4"
+  s.version      = "0.0.5"
   s.summary      = "包含各类弹出框组件. "
   s.license      = "MIT"
   s.author             = { "liangtong" => "liangtongdev@163.com" }
