@@ -263,18 +263,6 @@ On the top of **UIAlertController**
 
 
 
-
-
-## Release Log
-
-+ 0.0.4 (2018/07/31) - Popup Toast Support
-
-+ 0.0.3 (2018/07/30) - Popup Alert Support
-
-+ 0.0.2 (2018/07/27) - Popup View Support
-
-+ 0.0.1 (2018/07/26) - Popup Menu Support
-
 ## Contacts
 
  liangtongdev@163.com
